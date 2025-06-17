@@ -1,23 +1,13 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Ваше имя'
-description 'Работа сутенера для QBCore'
-version '1.0.0'
+author 'ageggi'
+description 'sutener job (clean rewrite, qbcore/ox_inventory ready)'
+version '2.0.0'
 
-dependencies {
-    'qb-core' -- Зависимость от QBCore
-}
+shared_script 'config.lua'
 
-client_scripts {
-    '@qb-core/import.lua', -- Импорт QBCore первым!
-    'config.lua',
-    'client/cl_commands.lua',
-    'client/cl_main.lua'
-}
+client_script 'client.lua'
+server_script 'server.lua'
 
-server_scripts {
-    '@qb-core/import.lua', -- Импорт QBCore для сервера
-    'config.lua',
-    'server/sv_main.lua'
-}
+lua54 'yes'
